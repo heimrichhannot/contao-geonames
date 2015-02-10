@@ -1,0 +1,41 @@
+<div id="tl_buttons">
+	<a href="<?php echo $this->back; ?>" class="header_back" title="<?php echo specialchars($GLOBALS['TL_LANG']['MSC']['backBTTitle']); ?>" accesskey="b"><?php echo $GLOBALS['TL_LANG']['MSC']['backBT']; ?></a>
+</div>
+<div id="tl_soverview">
+	<p class="tl_info"><strong><?php echo $GLOBALS['TL_LANG']['tl_geonames_postal']['importDownloadInfoText']; ?></strong></p>
+</div>
+<?php echo \Message::generate(); ?>
+<form action="<?php echo $this->action; ?>" id="<?php echo $this->formID; ?>" class="tl_form" method="post" enctype="multipart/form-data">
+	<div class="tl_formbody_edit">
+		<input type="hidden" name="FORM_SUBMIT" value="<?php echo $this->formID; ?>">
+		<input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+		<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo Config::get('maxFileSize'); ?>">
+
+		<div class="tl_tbox">
+			<h3><label for="separator"><?php echo $GLOBALS['TL_LANG']['MSC']['separator'][0]; ?></label></h3>
+			<select name="separator" id="separator" class="tl_select" onfocus="Backend.getScrollOffset()">
+				<option value="tabulator"><?php echo $GLOBALS['TL_LANG']['MSC']['tabulator']; ?></option>
+				<option value="semicolon"><?php echo $GLOBALS['TL_LANG']['MSC']['semicolon']; ?></option>
+				<option value="comma"><?php echo $GLOBALS['TL_LANG']['MSC']['comma']; ?></option>
+				<option value="linebreak"><?php echo $GLOBALS['TL_LANG']['MSC']['linebreak']; ?></option>
+			</select>
+			<?php if($GLOBALS['TL_LANG']['MSC']['separator'][1] != ''): ?>
+				<p class="tl_help tl_tip"><?php echo $GLOBALS['TL_LANG']['MSC']['separator'][1]; ?></p>
+			<?php endif; ?>
+			<h3><?php echo $GLOBALS['TL_LANG']['tl_geonames_postal']['postalSource'][0]; ?></h3>
+			<?php echo $this->objUploader->generateMarkup(); ?>
+			<?php if(isset($GLOBALS['TL_LANG']['tl_geonames_postal']['postalSource'][1])): ?>
+				<p class="tl_help tl_tip"><?php echo $GLOBALS['TL_LANG']['tl_geonames_postal']['postalSource'][1]; ?></p>
+			<?php endif; ?>
+		</div>
+
+	</div>
+
+	<div class="tl_formbody_submit">
+
+		<div class="tl_submit_container">
+			<input type="submit" name="save" id="save" class="tl_submit" accesskey="s" value="<?php echo $this->submitText; ?>">
+		</div>
+
+	</div>
+</form>
