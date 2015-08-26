@@ -30,4 +30,22 @@ class GeonamesPostalModel extends \Model
 		return static::findBy(array("LOWER($t.city) LIKE '" . strval(strtolower($varValue)) . "'"), $arrOptions);
 	}
 
+	public static function findDistinctCitiesByCountries(array $arrCountries = array('DE'), array $arrOptions = array())
+	{
+		$t = static::$strTable;
+
+		$objResult = \Database::getInstance()->prepare("SELECT DISTINCT city FROM $t WHERE country IN('" . implode("','", $arrCountries) . "') ORDER BY city")->execute();
+
+		$arrResult = array();
+
+		if($objResult->numRows < 1) return $arrResult;
+
+		while($objResult->next())
+		{
+			$arrResult[] = $objResult->city;
+		}
+
+		return $arrResult;
+	}
+
 }
