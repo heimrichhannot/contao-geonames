@@ -1,26 +1,36 @@
 {
     "name": "heimrichhannot/contao-geonames",
-    "description":"A contao helper module for developers, where postal code data with additional informations can be imported into contao.",
-    "keywords":["contao", "geonames", "postal", "latitude", "longitude"],
+    "description": "A contao helper module for developers, where postal code data with additional informations can be imported into contao.",
+    "keywords": [
+        "contao",
+        "geonames",
+        "postal",
+        "latitude",
+        "longitude"
+    ],
     "type": "contao-module",
-    "homepage":"https://github.com/heimrichhannot/contao-geonames",
-    "license":"LGPL-3.0+",
-    "authors":[
+    "homepage": "https://github.com/heimrichhannot/contao-geonames",
+    "license": "LGPL-3.0+",
+    "authors": [
         {
-            "name":"Heimrich & Hannot",
-            "email":"digitales@heimrich-hannot.de",
-            "homepage":"http://www.heimrich-hannot.de",
-            "role":"Developer"
+            "name": "Heimrich & Hannot",
+            "email": "digitales@heimrich-hannot.de",
+            "homepage": "http://www.heimrich-hannot.de",
+            "role": "Developer"
         }
     ],
-    "support":{
-        "issues":"https://github.com/heimrichhannot/contao-geonames/issues"
+    "support": {
+        "issues": "https://github.com/heimrichhannot/contao-geonames/issues"
     },
     "require": {
-        "contao/core": ">=3.2,<4-dev"
+        "php": "~5.4 || ~7.0",
+        "contao/core-bundle": "^3.5.1 || ~4.1",
+        "contao-community-alliance/composer-plugin": "~2.4 || ~3.0"
     },
     "autoload": {
-        "classmap": [""]
+        "classmap": [
+            ""
+        ]
     },
     "extra": {
         "contao": {
