@@ -34,7 +34,7 @@ class GeonamesPostalModel extends \Model
 	{
 		$t = static::$strTable;
 
-		$objResult = \Database::getInstance()->prepare("SELECT DISTINCT city FROM $t WHERE country IN('" . implode("','", $arrCountries) . "') ORDER BY city")->execute();
+                $objResult = \Database::getInstance()->prepare("SELECT city FROM $t WHERE country IN('" . implode("','", $arrCountries) . "') GROUP BY BINARY city ORDER BY city")->execute();
 
 		$arrResult = array();
 
