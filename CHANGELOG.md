@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2022-03-17
+- Added: php 8 support
+- Removed: php 5 support
+
 ## [1.0.5] - 2019-12-17
 - updated license
 - fixed only_full_group_by issue with MySQL 5.7

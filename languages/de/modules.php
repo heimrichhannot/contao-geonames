@@ -8,5 +8,4 @@
  * @license http://www.gnu.org/licences/lgpl-3.0.html LGPL
  */
 
-$GLOBALS['TL_LANG']['MOD']['geonames'][0] = 'GeoNames';
-$GLOBALS['TL_LANG']['MOD']['geonames'][1] = 'Hier werden geographische Daten verwaltet.';
+$GLOBALS['TL_LANG']['MOD']['geonames'] = ['GeoNames','Hier werden geographische Daten verwaltet.'];
